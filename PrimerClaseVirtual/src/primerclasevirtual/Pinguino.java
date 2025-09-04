@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package primerclasevirtual;
-
+/**
 class Pinguino extends Animal {
    private double altura;
    private boolean puedeVolar;
@@ -24,3 +24,4 @@ class Pinguino extends Animal {
       System.out.println(this.nombre + " se desliza sobre su barriga en el hielo");
    }
 }
+**/

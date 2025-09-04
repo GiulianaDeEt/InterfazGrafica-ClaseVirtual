@@ -6,44 +6,38 @@ package primerclasevirtual;
 
 public class PrimerClaseVirtual {
     public static void main(String[] args) {
-      //Jirafa manchitas = new Jirafa("Manchitas", 5, 800.0, 4.5, "marron");
+      System.out.println("~ CREACION DE ANIMALES CON VALIDACIONES ~");
+      //Jirafa manchitas = new Jirafa("Manchitas", 5, 800.0, 4.5, "marron oscuro");
       Elefante dumbo = new Elefante("Dumbo", 12, 4000.0, 1.8, true);
       Puma sombra = new Puma("Sombra", 3, 65.0, 80.0, 50.0);
-      Pinguino pingui = new Pinguino("Bartolo", 2, 4.5, 0.7, 8.0);
-      System.out.println("=== INFORMACION DE LOS ANIMALES ===");
+      System.out.println("~ INFORMACIPN INICIAL ~");
       //manchitas.mostrarInfo();
-      dumbo.mostrarInfo();
-      sombra.mostrarInfo();
-      pingui.mostrarInfo();
-      System.out.println("=== COMPORTAMIENTOS COMUNES ===");
-      //manchitas.respirar();
-      dumbo.dormir();
-      sombra.respirar();
-      pingui.dormir();
-      System.out.println("=== COMPORTAMIENTOS ESPECIFICOS ===");
-     // manchitas.estirarCuello();
-     // manchitas.comer();
-      dumbo.usarTrompa();
-      dumbo.duchar();
-      sombra.cazar();
-      sombra.correr();
-      pingui.nadar();
-      pingui.deslizar();
-      System.out.println("=== INTERACCIONES ENTRE ANIMALES ===");
-     // dumbo.ducharA(manchitas);
-      dumbo.ducharA(sombra);
-      dumbo.ducharA(pingui);
-      System.out.println("=== DEMOSTRACION DE POLIMORFISMO BASICO ===");
-     // Animal[] animales = new Animal[]{manchitas, dumbo, sombra, pingui};
-      System.out.println("Hora de comer:");
-      //Animal[] var6 = animales;
-      //int var7 = animales.length;
-/**
-      for(int var8 = 0; var8 < var7; ++var8) {
-         Animal animal = var6[var8];
-         animal.comer();
-      }**/
- }
+      //dumbo.mostrarInfo();
+      //sombra.mostrarInfo();
+      System.out.println("~ DETALLES ESPECIFICOS ~");
+      //manchitas.mostrarDetalles();
+      dumbo.mostrarDetalles();
+      sombra.mostrarDetalles();
+      System.out.println("~ DEMOSTRANDO VALIDACIONES (datos incorrectos) ~");
+      //Jirafa jirafaMala = new Jirafa("", -5, -100.0, 10.0, "");
+      //jirafaMala.mostrarInfo();
+      System.out.println("~ MODIFICANDO DATOS CON SETTERS ~");
+      //manchitas.cambiarPeso(850.0);
+      //manchitas.cumplirAnios();
+      System.out.println("Intentando cambios invalidos:");
+      dumbo.setEdad(150);
+      dumbo.setPeso(-500.0);
+      sombra.setVelocidadMaxima(200.0);
+      System.out.println("~ ESTADO FINAL (datos protegidos) ~");
+      //manchitas.mostrarInfo();
+      //dumbo.mostrarInfo();
+      //sombra.mostrarInfo();
+      System.out.println("~ DEMOSTRANDO ACCESO CONTROLADO ~");
+      //System.out.println("Nombre de la jirafa: " + manchitas.getNombre());
+      System.out.println("Edad del elefante: " + dumbo.getEdad() + " anios");
+      System.out.println("Velocidad del puma: " + sombra.getVelocidadMaxima() + " km/h");
+      System.out.println("Los datos estan protegidos y validados gracias a la encapsulacion");
+   }
 }
 
    
