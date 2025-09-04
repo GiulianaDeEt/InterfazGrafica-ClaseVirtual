@@ -4,23 +4,20 @@
  */
 package primerclasevirtual;
 
-class Pinguino {
-   public static String especie = "Spheniscus humboldti";
-   public String nombre = "";
-   public int edad = 0;
-   public double altura = 0.0;
-   public boolean puedeVolar = false;
-   public double velocidadNado = 0.0;
+class Pinguino extends Animal {
+   private double altura;
+   private boolean puedeVolar;
+   private double velocidadNado;
 
-   public Pinguino() {
-   }
-
-   public void comer() {
-      System.out.println(this.nombre + " come pescado fresco");
+   public Pinguino(String nombre, int edad, double peso, double altura, double velocidadNado) {
+      super(nombre, edad, peso, "Spheniscus humboldti");
+      this.altura = altura;
+      this.puedeVolar = false;
+      this.velocidadNado = velocidadNado;
    }
 
    public void nadar() {
-      System.out.println(this.nombre + " nada rápidamente bajo el agua");
+      System.out.println(this.nombre + " nada rapidamente a " + this.velocidadNado + " km/h bajo el agua");
    }
 
    public void deslizar() {

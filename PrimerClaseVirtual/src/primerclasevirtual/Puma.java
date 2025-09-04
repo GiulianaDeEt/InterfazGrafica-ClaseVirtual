@@ -4,19 +4,14 @@
  */
 package primerclasevirtual;
 
-class Puma {
-   public static String especie = "Puma concolor";
-   public String nombre = "";
-   public int edad = 0;
-   public double peso = 0.0;
-   public double velocidadMaxima = 0.0;
-   public double territorioKm2 = 0.0;
+class Puma extends Animal {
+   private double velocidadMaxima;
+   private double territorioKm2;
 
-   public Puma() {
-   }
-
-   public void comer() {
-      System.out.println(this.nombre + " devora su presa con sus poderosas mandibulas");
+   public Puma(String nombre, int edad, double peso, double velocidadMaxima, double territorioKm2) {
+      super(nombre, edad, peso, "Puma concolor");
+      this.velocidadMaxima = velocidadMaxima;
+      this.territorioKm2 = territorioKm2;
    }
 
    public void cazar() {
@@ -25,5 +20,9 @@ class Puma {
 
    public void saltar() {
       System.out.println(this.nombre + " salta agilmente entre las rocas");
+   }
+
+   public void correr() {
+      System.out.println(this.nombre + " corre a " + this.velocidadMaxima + " km/h");
    }
 }

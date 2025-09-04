@@ -6,39 +6,44 @@ package primerclasevirtual;
 
 public class PrimerClaseVirtual {
     public static void main(String[] args) {
-      //Jirafa miJirafa = new Jirafa();
-      //miJirafa.nombre = "Manchitas";
-     // miJirafa.edad = 5;
-      //miJirafa.altura = 4.5;
-      
-      Elefante miElefante = new Elefante();
-      miElefante.nombre = "Dumbo";
-      miElefante.edad = 12;
-      miElefante.peso = 4000.0;
-      
-      Puma miPuma = new Puma();
-      miPuma.nombre = "Sombra";
-      miPuma.edad = 3;
-      miPuma.velocidadMaxima = 80.0;
-      
-      System.out.println("=== ACTIVIDADES EN EL ZOOLOGICO ===");
-      
-     // miJirafa.comer();
-     // miJirafa.caminar();      
-     //System.out.println();
-     
-      miElefante.comer();
-      miElefante.duchar();
-      System.out.println();
-      
-      miPuma.cazar();
-      miPuma.saltar();
-      System.out.println();
-      
-      //System.out.println("Informacion: " + miJirafa.nombre + " es un " + Jirafa.especie + " de " + miJirafa.edad + " anios");
-      System.out.println("Informacion: " + miElefante.nombre + " es un " + Elefante.especie + " de " + miElefante.edad + " anios");
-      System.out.println("Informacion: " + miPuma.nombre + " es un " + Puma.especie + " de " + miPuma.edad + " anios");
-   }
+      //Jirafa manchitas = new Jirafa("Manchitas", 5, 800.0, 4.5, "marron");
+      Elefante dumbo = new Elefante("Dumbo", 12, 4000.0, 1.8, true);
+      Puma sombra = new Puma("Sombra", 3, 65.0, 80.0, 50.0);
+      Pinguino pingui = new Pinguino("Bartolo", 2, 4.5, 0.7, 8.0);
+      System.out.println("=== INFORMACION DE LOS ANIMALES ===");
+      //manchitas.mostrarInfo();
+      dumbo.mostrarInfo();
+      sombra.mostrarInfo();
+      pingui.mostrarInfo();
+      System.out.println("=== COMPORTAMIENTOS COMUNES ===");
+      //manchitas.respirar();
+      dumbo.dormir();
+      sombra.respirar();
+      pingui.dormir();
+      System.out.println("=== COMPORTAMIENTOS ESPECIFICOS ===");
+     // manchitas.estirarCuello();
+     // manchitas.comer();
+      dumbo.usarTrompa();
+      dumbo.duchar();
+      sombra.cazar();
+      sombra.correr();
+      pingui.nadar();
+      pingui.deslizar();
+      System.out.println("=== INTERACCIONES ENTRE ANIMALES ===");
+     // dumbo.ducharA(manchitas);
+      dumbo.ducharA(sombra);
+      dumbo.ducharA(pingui);
+      System.out.println("=== DEMOSTRACION DE POLIMORFISMO BASICO ===");
+     // Animal[] animales = new Animal[]{manchitas, dumbo, sombra, pingui};
+      System.out.println("Hora de comer:");
+      //Animal[] var6 = animales;
+      //int var7 = animales.length;
+/**
+      for(int var8 = 0; var8 < var7; ++var8) {
+         Animal animal = var6[var8];
+         animal.comer();
+      }**/
+ }
 }
 
    

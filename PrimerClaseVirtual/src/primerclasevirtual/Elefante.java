@@ -4,26 +4,25 @@
  */
 package primerclasevirtual;
 
-class Elefante {
-   public static String especie = "Loxodonta africana";
-   public String nombre = "";
-   public int edad = 0;
-   public double peso = 0.0;
-   public double longitudTrompa = 0.0;
-   public boolean tieneColmillos = true;
+class Elefante extends Animal{
+   private double longitudTrompa;
+   private boolean tieneColmillos;
 
-   public Elefante() {
+   public Elefante(String nombre, int edad, double peso, double longitudTrompa, boolean tieneColmillos) {
+      super(nombre, edad, peso, "Loxodonta africana");
+      this.longitudTrompa = longitudTrompa;
+      this.tieneColmillos = tieneColmillos;
    }
 
-   public void comer() {
-      System.out.println(this.nombre + " usa su trompa para agarrar hierba y frutas");
-   }
-
-   public void caminar() {
-      System.out.println(this.nombre + " camina pesadamente haciendo temblar el suelo");
+   public void usarTrompa() {
+      System.out.println(this.nombre + " usa su trompa de " + this.longitudTrompa + " metros");
    }
 
    public void duchar() {
       System.out.println(this.nombre + " se ducha tirandose agua con su trompa");
+   }
+
+   public void ducharA(Animal otro) {
+      System.out.println(this.nombre + " tira agua sobre " + otro.nombre + " con su trompa");
    }
 }
