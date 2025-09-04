@@ -6,38 +6,37 @@ package primerclasevirtual;
 
 public class PrimerClaseVirtual {
     public static void main(String[] args) {
-      //Jirafa miJirafa = new Jirafa();
-      //miJirafa.nombre = "Manchitas";
-     // miJirafa.edad = 5;
-      //miJirafa.altura = 4.5;
-      
-      Elefante miElefante = new Elefante();
-      miElefante.nombre = "Dumbo";
-      miElefante.edad = 12;
-      miElefante.peso = 4000.0;
-      
-      Puma miPuma = new Puma();
-      miPuma.nombre = "Sombra";
-      miPuma.edad = 3;
-      miPuma.velocidadMaxima = 80.0;
-      
-      System.out.println("=== ACTIVIDADES EN EL ZOOLOGICO ===");
-      
-     // miJirafa.comer();
-     // miJirafa.caminar();      
-     //System.out.println();
-     
-      miElefante.comer();
-      miElefante.duchar();
-      System.out.println();
-      
-      miPuma.cazar();
-      miPuma.saltar();
-      System.out.println();
-      
-      //System.out.println("Informacion: " + miJirafa.nombre + " es un " + Jirafa.especie + " de " + miJirafa.edad + " anios");
-      System.out.println("Informacion: " + miElefante.nombre + " es un " + Elefante.especie + " de " + miElefante.edad + " anios");
-      System.out.println("Informacion: " + miPuma.nombre + " es un " + Puma.especie + " de " + miPuma.edad + " anios");
+      System.out.println("~ CREACION DE ANIMALES CON VALIDACIONES ~");
+      //Jirafa manchitas = new Jirafa("Manchitas", 5, 800.0, 4.5, "marron oscuro");
+      Elefante dumbo = new Elefante("Dumbo", 12, 4000.0, 1.8, true);
+      Puma sombra = new Puma("Sombra", 3, 65.0, 80.0, 50.0);
+      System.out.println("~ INFORMACIPN INICIAL ~");
+      //manchitas.mostrarInfo();
+      //dumbo.mostrarInfo();
+      //sombra.mostrarInfo();
+      System.out.println("~ DETALLES ESPECIFICOS ~");
+      //manchitas.mostrarDetalles();
+      dumbo.mostrarDetalles();
+      sombra.mostrarDetalles();
+      System.out.println("~ DEMOSTRANDO VALIDACIONES (datos incorrectos) ~");
+      //Jirafa jirafaMala = new Jirafa("", -5, -100.0, 10.0, "");
+      //jirafaMala.mostrarInfo();
+      System.out.println("~ MODIFICANDO DATOS CON SETTERS ~");
+      //manchitas.cambiarPeso(850.0);
+      //manchitas.cumplirAnios();
+      System.out.println("Intentando cambios invalidos:");
+      dumbo.setEdad(150);
+      dumbo.setPeso(-500.0);
+      sombra.setVelocidadMaxima(200.0);
+      System.out.println("~ ESTADO FINAL (datos protegidos) ~");
+      //manchitas.mostrarInfo();
+      //dumbo.mostrarInfo();
+      //sombra.mostrarInfo();
+      System.out.println("~ DEMOSTRANDO ACCESO CONTROLADO ~");
+      //System.out.println("Nombre de la jirafa: " + manchitas.getNombre());
+      System.out.println("Edad del elefante: " + dumbo.getEdad() + " anios");
+      System.out.println("Velocidad del puma: " + sombra.getVelocidadMaxima() + " km/h");
+      System.out.println("Los datos estan protegidos y validados gracias a la encapsulacion");
    }
 }
 
