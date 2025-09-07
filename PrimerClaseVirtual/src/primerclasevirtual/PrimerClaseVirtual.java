@@ -10,6 +10,8 @@ public class PrimerClaseVirtual {
       //Jirafa manchitas = new Jirafa("Manchitas", 5, 800.0, 4.5, "marron oscuro");
       Elefante dumbo = new Elefante("Dumbo", 12, 4000.0, 1.8, true);
       Puma sombra = new Puma("Sombra", 3, 65.0, 80.0, 50.0);
+       Oso baloo = new Oso("Baloo", 10, 300, "Pardo", true);
+
       System.out.println("~ INFORMACIPN INICIAL ~");
       //manchitas.mostrarInfo();
       //dumbo.mostrarInfo();
@@ -37,6 +39,12 @@ public class PrimerClaseVirtual {
       System.out.println("Edad del elefante: " + dumbo.getEdad() + " anios");
       System.out.println("Velocidad del puma: " + sombra.getVelocidadMaxima() + " km/h");
       System.out.println("Los datos estan protegidos y validados gracias a la encapsulacion");
+      baloo.mostrarDetalles();
+      baloo.pescar();
+      baloo.treparArbol();
+      baloo.hibernar();
+      baloo.comer();
+      baloo.hacerSonido();
    }
 }
 
