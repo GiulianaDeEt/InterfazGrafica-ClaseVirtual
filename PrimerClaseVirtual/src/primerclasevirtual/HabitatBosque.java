@@ -8,6 +8,10 @@ package primerclasevirtual;
  *
  * @author Fede
  */
+
+
 public interface HabitatBosque {
-    
+    void refugiarse();
+    void buscarComidaBosque();
+    void marcarTerritorio();
 }
