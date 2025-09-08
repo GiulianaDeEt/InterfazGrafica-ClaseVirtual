@@ -14,6 +14,9 @@ public class PrimerClaseVirtual {
         Pinguino pingu = new Pinguino("Pingu", 3, 5.0, 0.8, 10.0);
         Aguila altair = new Aguila("Altair", 7, 4.5, 2.2);
         Lemur bongo = new Lemur("Bongo", 5, 15.0, 0.7, "Capuchino");
+        Cocodrilo renzo = new Cocodrilo("renzo", 10, 80.0, 18.0, 12, 5);
+
+
         
         System.out.println("~ POLIMORFISMO POR SOBRECARGA - Diferentes formas de dormir ~");
         
@@ -22,6 +25,7 @@ public class PrimerClaseVirtual {
         pingu.dormir(8);                       // Con duracion
         pingu.dormir("cueva de hielo");        // Con lugar
         pingu.dormir(6, "nido calido");        // Con duracion Y lugar
+        renzo.dormir();
         
         System.out.println();
         
