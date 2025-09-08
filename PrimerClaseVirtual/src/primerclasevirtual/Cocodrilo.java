@@ -10,7 +10,7 @@ package primerclasevirtual;
  */
 
 
-public class Cocodrilo extends Animal implements Nadador {
+public class Cocodrilo extends Animal implements Nadador, Pantano {
      
     private double velocidadNado;
     private int velocidad;
