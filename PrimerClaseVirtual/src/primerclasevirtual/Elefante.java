@@ -6,7 +6,7 @@ package primerclasevirtual;
 
 // CLASES HIJAS - DEBEN implementar todos los métodos abstractos
 class Elefante extends Animal {
-    private double longitudTrompa;
+   private double longitudTrompa;
     private boolean tieneColmillos;
     
     public Elefante(String nombre, int edad, double peso, double longitudTrompa, boolean tieneColmillos) {

@@ -10,33 +10,35 @@ Conceptos: abstract class, abstract methods, métodos obligatorios,
 plantillas, polimorfismo con clases abstractas
 */
 
-// CLASE ABSTRACTA - Animal (NO se puede instanciar directamente)
+// CLASE ABSTRACTA - Animal (misma de antes pero expandida)
 abstract class Animal {
-    // Atributos protegidos (accesibles por clases hijas)
     protected String nombre;
     protected int edad;
     protected double peso;
     protected String especie;
+    protected int energia; // Nuevo atributo para demostrar reglas de negocio
     
-    // Constructor - solo pueden usarlo las clases hijas
     public Animal(String nombre, int edad, double peso, String especie) {
         this.setNombre(nombre);
         this.setEdad(edad);
         this.setPeso(peso);
         this.especie = especie;
+        this.energia = 100; // Todos inician con energia completa
     }
     
-    // GETTERS Y SETTERS (mismos de antes)
+    // Getters básicos
     public String getNombre() { return nombre; }
     public int getEdad() { return edad; }
     public double getPeso() { return peso; }
     public String getEspecie() { return especie; }
+    public int getEnergia() { return energia; }
     
+    // Setters con validación (reglas de negocio)
     public void setNombre(String nombre) {
         if (nombre != null && !nombre.trim().isEmpty()) {
             this.nombre = nombre.trim();
         } else {
-            System.out.println("Error: El nombre no puede estar vacío");
+            System.out.println("Error: El nombre no puede estar vacio");
             this.nombre = "Sin nombre";
         }
     }
@@ -45,7 +47,7 @@ abstract class Animal {
         if (edad >= 0 && edad <= 100) {
             this.edad = edad;
         } else {
-            System.out.println("Error: La edad debe estar entre 0 y 100 años");
+            System.out.println("Error: La edad debe estar entre 0 y 100 anios");
             this.edad = 0;
         }
     }
@@ -59,53 +61,74 @@ abstract class Animal {
         }
     }
     
-    // MÉTODOS CONCRETOS - Implementados en la clase abstracta
-    // Todos los animales los heredarán tal como están
+    // POLIMORFISMO POR SOBRECARGA - Multiples versiones del mismo metodo
+    // Diferentes parametros = diferentes comportamientos
+    
+    // Dormir sin parametros (dormir normal)
     public void dormir() {
         System.out.println(nombre + " esta durmiendo...");
+        energia = Math.min(100, energia + 30); // Recupera energia
     }
     
+    // Dormir con duracion especifica (SOBRECARGA)
+    public void dormir(int horas) {
+        System.out.println(nombre + " duerme por " + horas + " horas");
+        energia = Math.min(100, energia + (horas * 5));
+    }
+    
+    // Dormir en un lugar especifico (SOBRECARGA)
+    public void dormir(String lugar) {
+        System.out.println(nombre + " duerme comodamente en " + lugar);
+        energia = Math.min(100, energia + 40); // Dormir en lugar especifico da mas energia
+    }
+    
+    // Dormir con duracion Y lugar (SOBRECARGA)
+    public void dormir(int horas, String lugar) {
+        System.out.println(nombre + " duerme por " + horas + " horas en " + lugar);
+        energia = Math.min(100, energia + (horas * 8)); // Combinación da mas energia
+    }
+    
+    // Jugar - otro ejemplo de sobrecarga
+    public void jugar() {
+        if (energia >= 20) {
+            System.out.println(nombre + " juega solo");
+            energia -= 15;
+        } else {
+            System.out.println(nombre + " esta muy cansado para jugar");
+        }
+    }
+    
+    public void jugar(String companiero) {
+        if (energia >= 20) {
+            System.out.println(nombre + " juega con " + companiero);
+            energia -= 10; // Jugar acompañado cansa menos
+        } else {
+            System.out.println(nombre + " esta muy cansado para jugar con " + companiero);
+        }
+    }
+    
+    public void jugar(String companiero, int minutos) {
+        if (energia >= minutos/2) {
+            System.out.println(nombre + " juega con " + companiero + " por " + minutos + " minutos");
+            energia -= minutos/3;
+        } else {
+            System.out.println(nombre + " no tiene suficiente energia para jugar " + minutos + " minutos");
+        }
+    }
+    
+    // Metodos concretos heredados
     public void respirar() {
         System.out.println(nombre + " esta respirando");
     }
     
     public void mostrarInfo() {
         System.out.println(getNombre() + " (" + getEspecie() + ") - " + 
-                          getEdad() + " anios, " + getPeso() + " kg");
+                          getEdad() + " anios, " + getPeso() + " kg, Energia: " + energia + "%");
     }
     
-    public void cumplirAnios() {
-        setEdad(edad + 1);
-        System.out.println(nombre + " cumplio anios! Ahora tiene " + edad + " anios");
-    }
-    
-    // MÉTODOS ABSTRACTOS - NO tienen implementación
-    // Las clases hijas DEBEN implementarlos (es obligatorio)
-    public abstract void comer();          // Cada animal come diferente
-    public abstract void hacerSonido();    // Cada animal suena diferente
-    public abstract void moverse();        // Cada animal se mueve diferente
-    public abstract String getTipoHabitat(); // Cada animal vive en un lugar diferente
-    
-    // MÉTODO CONCRETO que usa metodos abstractos
-    // Demuestra como la clase abstracta puede "coordinar" comportamientos
-    public void rutinaDiaria() {
-        System.out.println("~ Rutina diaria de " + nombre + " ~");
-        System.out.println("Despertando...");
-        respirar();
-        
-        System.out.println("Hora de desayunar...");
-        comer(); // Método abstracto - cada animal come diferente
-        
-        System.out.println("Moviendose por su habitat: " + getTipoHabitat());
-        moverse(); // Método abstracto - cada animal se mueve diferente
-        
-        System.out.println("Comunicandose...");
-        hacerSonido(); // Método abstracto - cada animal suena diferente
-        
-        System.out.println("Hora de descansar...");
-        dormir();
-        
-        System.out.println("Rutina completada para " + nombre);
-        System.out.println();
-    }
+    // Metodos abstractos (deben implementarse)
+    public abstract void comer();
+    public abstract void hacerSonido();
+    public abstract void moverse();
+    public abstract String getTipoHabitat();
 }
