@@ -8,7 +8,7 @@ package primerclasevirtual;
  *
  * @author Usuario
  */
-public class MonoAullador extends Animal {
+public class MonoAullador extends Animal implements SelvaTropical{
 
     public MonoAullador(String nombre, int edad, double peso, String especie) {
         super(nombre, edad, peso, especie);
@@ -34,5 +34,29 @@ public class MonoAullador extends Animal {
         return nombre + " vive en el habitat Selva Tropical";
     }
     
+    @Override
+    public void cazar(Animal presa){
+        System.out.print(nombre + " no es depredador de ningun animal. ");
+        System.out.println("Por eso no puede cazar a " + presa.getNombre());
+    }
+    
+    @Override
+    public void protegerseDeDepredador(Animal depredador){
+        System.out.println(nombre + " esta escondido protegiendose de: " + depredador.getNombre());
+    }
+    
+    @Override
+    public void descansar() {
+        System.out.println(nombre + " descansa en las ramas de un árbol.");
+    }
 
+    @Override
+    public void competirPorAlimento(Animal rival) {
+        System.out.println(nombre + " compite por alimento contra: " + rival.getNombre());
+    }
+
+    @Override
+    public void compartirAlimento(Animal companiero) {
+        System.out.println(nombre + " comparte frutas con su compañero: " + companiero.getNombre());
+    }
 }
