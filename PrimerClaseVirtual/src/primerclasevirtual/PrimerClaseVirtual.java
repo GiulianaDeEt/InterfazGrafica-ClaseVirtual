@@ -11,7 +11,12 @@ public class PrimerClaseVirtual {
         // Creando animales con diferentes capacidades
         Elefante dumbo = new Elefante("Dumbo", 15, 4500.0, 1.8, true);
         
-     
+        MonoAullador titi = new MonoAullador("Titi", 3, 14.4, "Alouatta caraya");
+        
+        titi.comer();
+        titi.hacerSonido();
+        titi.moverse();
+        System.out.println(titi.getTipoHabitat());
      
         
     }
