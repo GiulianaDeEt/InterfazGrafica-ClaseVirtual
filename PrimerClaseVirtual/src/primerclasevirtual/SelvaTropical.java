@@ -9,8 +9,9 @@ package primerclasevirtual;
  * @author Usuario
  */
 public interface SelvaTropical {
-    void desplazarse(String lugar);
-    void alimentarse();
-    void emitirSonido();
-    boolean puedeHablar();
+    void cazar(Animal presa);
+    void protegerseDeDepredador(Animal depredador);
+    void descansar();
+    void competirPorAlimento(Animal rival);
+    void compartirAlimento(Animal companiero);
 }
