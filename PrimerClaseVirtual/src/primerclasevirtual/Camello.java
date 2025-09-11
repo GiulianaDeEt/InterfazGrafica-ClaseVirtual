@@ -3,7 +3,6 @@ package primerclasevirtual;
 public class Camello extends Animal implements Habitat_Desierto {
     private int jorobas;
     private double velocidad;
-
     
     public Camello(String nombre, int edad, double peso, int jorobas, double velocidad) {
         super(nombre, edad, peso, "Camelus dromedarius");
@@ -49,6 +48,11 @@ public class Camello extends Animal implements Habitat_Desierto {
     }
     
     @Override
+    public void buscarAgua() {
+        System.out.println("   " + nombre + " busca agua en el desierto");
+    }
+
+    @Override
     public String getTipoHabitat() {
         return "desierto";
     }
@@ -57,4 +61,5 @@ public class Camello extends Animal implements Habitat_Desierto {
     public void almacenarAgua() {
         System.out.println("   " + nombre + " almacena agua en sus " + jorobas + " jorobas");
     }
+
 }
