@@ -15,7 +15,7 @@ public class PrimerClaseVirtual {
         Aguila altair = new Aguila("Altair", 7, 4.5, 2.2);
         Lemur bongo = new Lemur("Bongo", 5, 15.0, 0.7, "Capuchino");
         Cocodrilo renzo = new Cocodrilo("renzo", 10, 80.0, 18.0, 12, 5);
-
+        Anaconda ana = new Anaconda("Kaa", 12, 120.0, 50, 30);
 
         
         System.out.println("~ POLIMORFISMO POR SOBRECARGA - Diferentes formas de dormir ~");
@@ -183,6 +183,42 @@ public class PrimerClaseVirtual {
         System.out.println("Comportamientos unicos de Bongo:");
         bongo.columpiar();
         
+        // --- PELEA: Anaconda vs Cocodrilo ---
+        System.out.println("\n=== PELEA: " + ana.getNombre() + " vs " + renzo.getNombre() + " ===");
+        int turno = 0; // 0 = turno de anaconda, 1 = turno de cocodrilo
+
+        while (ana.estaVivo() && renzo.estaVivo()) {
+            if (turno == 0) {
+                System.out.println("\nTurno de " + ana.getNombre());
+                // Anaconda ataca
+                ana.atacarA(renzo);
+            } else {
+                System.out.println("\nTurno de " + renzo.getNombre());
+                // Cocodrilo ataca
+                renzo.atacarA(ana);
+            }
+
+            // Mostrar estado intermedio
+            ana.mostrarEstado();
+            renzo.mostrarEstado();
+
+            // Alternar turno
+            turno = 1 - turno;
+
+            // Pequeña pausa estética (opcional) - comentar si no querés sleep
+            try { Thread.sleep(500); } catch (InterruptedException e) { /* ignore */ }
+        }
+
+        // Resultado
+        if (ana.estaVivo()) {
+            System.out.println("\n¡" + ana.getNombre() + " gana la pelea!");
+        } else if (renzo.estaVivo()) {
+            System.out.println("\n¡" + renzo.getNombre() + " gana la pelea!");
+        } else {
+            System.out.println("\nAmbos han caído...");
+        }
+
+
         System.out.println("~RESUMEN DE CONCEPTOS DEMOSTRADOS~");
         System.out.println("HERENCIA: Todas las clases extienden Animal");
         System.out.println("ABSTRACCION: Animal es abstracta, define metodos obligatorios");
