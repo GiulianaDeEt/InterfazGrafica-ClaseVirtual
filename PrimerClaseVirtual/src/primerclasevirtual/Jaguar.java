@@ -9,7 +9,7 @@ package primerclasevirtual;
  * @author manuel
  */
 
-class Jaguar extends Animal implements SelvaTropical{
+public class Jaguar extends Animal implements SelvaTropical{
     public Jaguar(String nombre, int edad, double peso, String especie) {
         super(nombre, edad, peso, especie);
     }
