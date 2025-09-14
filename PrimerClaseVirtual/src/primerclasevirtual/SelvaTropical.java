@@ -8,7 +8,7 @@ package primerclasevirtual;
  *
  * @author Usuario
  */
-public interface SelvaTropical {
+public interface SelvaTropical{
     void cazar(Animal presa);
     void protegerseDeDepredador(Animal depredador);
     void descansar();
