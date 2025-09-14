@@ -13,7 +13,7 @@ public class AnacondaVerde extends Animal implements SelvaTropical {
     private double longitud;
     private double diametro;
 
-    public AnacondaVerde(double longitud, String nombre, int edad, double peso, String especie) {
+    public AnacondaVerde(double longitud, double diametro, String nombre, int edad, double peso, String especie) {
         super(nombre, edad, peso, "Eunectes murinus");
         setLongitud(longitud);
         setDiametro(diametro);
@@ -79,7 +79,7 @@ public class AnacondaVerde extends Animal implements SelvaTropical {
 
     @Override
     public String getTipoHabitat() {
-        return "Selva tropical de Sudamérica";
+        return nombre + " vive en la Selva tropical de Sudamérica";
     }
 
 // Métodos interface SelvaTropical
