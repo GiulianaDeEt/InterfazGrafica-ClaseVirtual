@@ -9,6 +9,8 @@ package primerclasevirtual;
  * @author Usuario
  */
 public class MonoAullador extends Animal implements SelvaTropical{
+    
+    protected int energia = 50;
 
     public MonoAullador(String nombre, int edad, double peso, String especie) {
         super(nombre, edad, peso, especie);
@@ -26,7 +28,11 @@ public class MonoAullador extends Animal implements SelvaTropical{
     
     @Override
     public void moverse(){
-        System.out.println(nombre + " se está moviendo saltando de un árbol a otro.");
+        if(energia > 20){
+            System.out.println(nombre + " se está moviendo saltando de un árbol a otro.");
+        }else{
+            System.out.println(nombre + " está muy cansado y no se mueve.");
+        }
     }
     
     @Override
@@ -48,6 +54,7 @@ public class MonoAullador extends Animal implements SelvaTropical{
     @Override
     public void descansar() {
         System.out.println(nombre + " descansa en las ramas de un árbol.");
+        energia += 10;
     }
 
     @Override
