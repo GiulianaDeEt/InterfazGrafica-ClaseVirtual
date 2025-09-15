@@ -14,6 +14,7 @@ public class PrimerClaseVirtual {
         Guacamayo lolo = new Guacamayo("Lolo", 2, 1.4, "Ara macao");
         AnacondaVerde corcho = new AnacondaVerde(5, 26 ,"Corcho", 26, 34, "Eunectes murinus");
         RanaVenenosa pepeDark = new RanaVenenosa("Pepe Dark", 1, 1, "Dendrobates tinctorius");
+        Jaguar mernuel = new Jaguar("Mernuel", 2, 56, "Panthera Onca");
 
         titi.comer();
         titi.hacerSonido();
@@ -40,6 +41,10 @@ public class PrimerClaseVirtual {
         pepeDark.moverse();
         System.out.println(pepeDark.getTipoHabitat());
 
+        mernuel.comer();
+        mernuel.hacerSonido();
+        mernuel.moverse();
+        System.out.println(mernuel.getTipoHabitat());
 
         if (titi instanceof SelvaTropical) {
             titi.cazar(perez);
@@ -69,12 +74,21 @@ public class PrimerClaseVirtual {
             corcho.competirPorAlimento(pepeDark);
             corcho.compartirAlimento(titi);
         }
+        
         if (pepeDark instanceof SelvaTropical) {
             pepeDark.cazar(lolo);
             pepeDark.protegerseDeDepredador(perez);
             pepeDark.descansar();
             pepeDark.competirPorAlimento(corcho);
             pepeDark.compartirAlimento(titi);
+        }
+        
+        if (mernuel instanceof SelvaTropical) {
+            mernuel.cazar(lolo);
+            mernuel.protegerseDeDepredador(corcho);
+            mernuel.descansar();
+            mernuel.competirPorAlimento(pepeDark);
+            mernuel.compartirAlimento(perez);
         }
 
     }

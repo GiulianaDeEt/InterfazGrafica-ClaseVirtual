@@ -49,7 +49,12 @@ public class Jaguar extends Animal implements SelvaTropical{
     public void competirPorAlimento(Animal rival) {
         System.out.println(nombre + " compite por alimento contra: " + rival.getNombre());
     }
-
+    
+    @Override
+    public void protegerseDeDepredador(Animal depredador) {
+        System.out.println(nombre + " se está protegiendo de: " + depredador.getNombre());
+    }
+    
     @Override
     public void compartirAlimento(Animal companiero) {
         System.out.println(nombre + " comparte frutas con su compañero: " + companiero.getNombre());
